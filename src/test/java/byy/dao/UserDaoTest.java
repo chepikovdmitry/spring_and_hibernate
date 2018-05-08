@@ -22,6 +22,6 @@ public class UserDaoTest {
     }
     @Test
     public void test2(){
-        assertThat(userDao.findAll(),notNullValue());
+        assertThat(userDao.findAll(),notNullValue());//nbvn
     }
 }

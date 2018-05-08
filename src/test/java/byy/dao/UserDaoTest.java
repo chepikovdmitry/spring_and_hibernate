@@ -23,6 +23,7 @@ public class UserDaoTest {
 
     @Test
     public void test2(){
-        assertThat(userDao.findAll(),notNullValue());//fdsafdsa
+
+        assertThat(userDao.findAll(),notNullValue());
     }
 }

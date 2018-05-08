@@ -20,6 +20,7 @@ public class UserDaoTest {
     public void notNullSessionFactory(){
         assertThat(sessionFactory,notNullValue());
     }
+
     @Test
     public void test2(){
         assertThat(userDao.findAll(),notNullValue());

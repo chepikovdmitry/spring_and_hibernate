@@ -1,5 +1,6 @@
 package byy.dao;
 
+import byy.service.UserService;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,7 @@ public class UserDaoTest {
     @Autowired
     SessionFactory sessionFactory;
     @Autowired
-    UserDao userDao;
+    UserService userService;
     @Test
     public void notNullSessionFactory(){
         assertThat(sessionFactory,notNullValue());
@@ -24,6 +25,6 @@ public class UserDaoTest {
     @Test
     public void test2(){
 
-        assertThat(userDao.findAll(),notNullValue());
+        assertThat(userService.findAll(),notNullValue());
     }
 }

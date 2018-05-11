@@ -22,20 +22,25 @@ public abstract class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
 
     @Override
     public void save(T entity) {
-        sessionFactory.openSession().beginTransaction();
-        sessionFactory.getCurrentSession().save(entity);
-        sessionFactory.getCurrentSession().getTransaction().commit();
-        sessionFactory.getCurrentSession().close();
+       // sessionFactory.openSession().beginTransaction();
+
+        Session session = sessionFactory.getCurrentSession();
+        System.out.println("session = "+session);
+        session.save(entity);
+        findAll();
+//        sessionFactory.getCurrentSession().getTransaction().commit();
+//        sessionFactory.getCurrentSession().close();
     }
 
     @Override
     public List<T> findAll() {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        System.out.println(type.getName());
+        Session session = sessionFactory.getCurrentSession();
+       /* Transaction transaction = session.beginTransaction();
+        System.out.println(type.getName());*/
+        System.out.println("session = "+session);
         List<T> resultList = session.createQuery("from " + type.getName(), type).getResultList();
-        transaction.commit();
-        session.close();
+       /* transaction.commit();
+        session.close();*/
 
 
         return resultList;

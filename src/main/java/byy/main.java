@@ -1,14 +1,11 @@
 package byy;
 
-import byy.dao.UserDao;
-import byy.dao.UserDaoImpl;
-import byy.dao.config.DataBaseConfig;
+import config.DataBaseConfig;
 import byy.entity.User;
 import byy.service.UserService;
 import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service

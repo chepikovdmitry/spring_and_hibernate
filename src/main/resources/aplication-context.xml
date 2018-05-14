@@ -33,7 +33,9 @@
      </bean>
 
     <context:annotation-config></context:annotation-config>
-    <context:component-scan base-package="byy"></context:component-scan>
+    <context:component-scan base-package="byy">
+        <!--<context:exclude-filter type="regex" expression="byy.config.*"/>-->
+    </context:component-scan>
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
